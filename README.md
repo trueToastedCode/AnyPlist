@@ -2,7 +2,7 @@
 
 A cross platform plist editor. 
 
-![rsz_17e71a92c-eef1-4ee5-9736-1aad13f58f75](https://user-images.githubusercontent.com/44642574/171173508-13869156-b4ff-432d-bed8-f2d010cbcc6f.png)
+![7E71A92C-EEF1-4EE5-9736-1AAD13F58F75](https://user-images.githubusercontent.com/44642574/171173960-d13da925-da5c-4c08-9d04-ef2381c3c7e4.png)
 
 ### Info
 You are not allowed to copy, distribute, or modify.
