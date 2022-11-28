@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../services/version_check/version_check_impl.dart';
 import '../../../states_management/open/open_cubit.dart';
 import '../../../states_management/open/open_state.dart';
 
@@ -20,13 +19,6 @@ class OpenPage extends StatefulWidget {
 }
 
 class _OpenPageState extends State<OpenPage> {
-  static const _releaseUrl = 'https://github.com/trueToastedCode/AnyPlistRelease';
-
-  @override
-  initState() {
-    super.initState();
-    _init();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,35 +80,4 @@ class _OpenPageState extends State<OpenPage> {
       },
     );
   }
-  
-  _outdated() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return CupertinoAlertDialog(
-          title: const Text('Outdated'),
-          content: const Text('A new version is available!'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () async {
-                await launchUrl(Uri.parse(_releaseUrl));
-              },
-              child: const Text('Show'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  _init() async {
-    try {
-      final outdated = await VersionCheck().isNewerVersion();
-      if (outdated) _outdated();
-    } on Exception {}
-  } 
 }
