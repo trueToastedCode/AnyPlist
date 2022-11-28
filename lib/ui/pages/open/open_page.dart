@@ -4,10 +4,10 @@ import 'package:anyplist/ui/widgets/open/version_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../states_management/open/open_cubit.dart';
 import '../../../states_management/open/open_state.dart';
+import '../../widgets/open/author_widget.dart';
 
 class OpenPage extends StatefulWidget {
   final IOpenRouter router;
@@ -44,15 +44,25 @@ class _OpenPageState extends State<OpenPage> {
               },
             ),
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 8, right: 8),
-                    child: VersionWidget(),
-                  )
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Expanded(child: Container()),
+                    const Expanded(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: AuthorWidget(),
+                      ),
+                    ),
+                    const Expanded(
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: VersionWidget(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
