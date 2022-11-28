@@ -219,7 +219,7 @@ class AnyXML {
             newElement = {'type': 'string', 'args': null, 'content': element['content'].length == 0 ? '' : HEX.encode(base64.decode(element['content']))};
             break;
           case 'integer':
-            newElement = {'type': 'integer', 'args': null, 'content': element['content'].length == 0 ? '' : '${int.parse(HEX.encode(base64.decode(element['content'])))}'};
+            newElement = {'type': 'integer', 'args': null, 'content': element['content'].length == 0 ? '' : '${int.parse(HEX.encode(base64.decode(element['content'])), radix: 16)}'};
             break;
           case 'data':
             newElement = element;
