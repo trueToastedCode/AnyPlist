@@ -297,7 +297,7 @@ class AnyXML {
   void reorder(List<dynamic> path, int from, int to) {
     if (from == to) return;
     final list = getPath(path);
-    if (list.runtimeType != List) {
+    if (list is! List) {
       throw Exception('Expected path to point at list');
     } else if (list.isEmpty) {
       throw Exception('List is empty');
