@@ -32,6 +32,7 @@ class _OpenPageState extends State<OpenPage> {
                 return OpenWidget(
                   enabled: state is OpenInitialState,
                   open: () => context.read<OpenCubit>().open(),
+                  newplist: () => context.read<OpenCubit>().newplist(),
                 );
               },
               listener: (_, state) {
