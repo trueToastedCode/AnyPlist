@@ -44,6 +44,19 @@ class _OpenPageState extends State<OpenPage> {
                 }
               },
             ),
+            const SizedBox(height: 20),
+            Container(
+              width: 350,
+              padding: const EdgeInsets.fromLTRB(7, 5, 8, 7),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.4),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Text(
+                'AnyPlist is a free editor based on Flutter for Property lists.',
+                textAlign: TextAlign.center,
+              ),
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
