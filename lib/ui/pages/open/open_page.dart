@@ -53,7 +53,7 @@ class _OpenPageState extends State<OpenPage> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Text(
-                'AnyPlist is a free editor based on Flutter for Property lists.',
+                'AnyPlist is a Flutter based free editor for Property lists',
                 textAlign: TextAlign.center,
               ),
             ),
