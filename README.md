@@ -13,7 +13,3 @@ Comment out the error causing imports and method calls for the web.
 
 ### Web
 Uncomment the imports and method calls for the web.
-
-#### Affected files
-- All lines in safe_data_web.dart
-- Instantiation of SafeDataWeb() in edit_page.dart
