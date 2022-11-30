@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:io' show Platform;
 
+import 'package:anyplist/globals.dart';
 import 'package:anyplist/states_management/edit/edit_cubit.dart';
 import 'package:anyplist/ui/widgets/edit/type_widget.dart';
 import 'package:anyplist/ui/widgets/edit/up_down_widget.dart';
@@ -79,6 +80,7 @@ class _KeyArrayPlistDictWidgetState extends State<KeyArrayPlistDictWidget> with 
                 : Container(),
             Text(
               '(${_childElementCount()} items)',
+              style: const TextStyle(fontSize: treeFontSize),
               // style: _expanded ? null : const TextStyle(color: Colors.white60)
             )
           ],

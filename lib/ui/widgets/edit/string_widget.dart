@@ -1,3 +1,4 @@
+import 'package:anyplist/globals.dart';
 import 'package:anyplist/states_management/edit/edit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,7 +47,7 @@ class _StringWidgetState extends State<StringWidget> {
         hintText: "string",
         contentPadding: EdgeInsets.only(top: 17, right: 0),
       ),
-      style: const TextStyle(fontSize: 12),
+      style: const TextStyle(fontSize: itemFontSize),
       textAlignVertical: TextAlignVertical.bottom,
       controller: _controller,
     );

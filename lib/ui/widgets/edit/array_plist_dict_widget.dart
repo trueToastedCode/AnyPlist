@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:io' show Platform;
 
+import 'package:anyplist/globals.dart';
 import 'package:anyplist/ui/widgets/edit/expansion_theme_widget.dart';
 import 'package:anyplist/ui/widgets/edit/tree_builder.dart';
 import 'package:anyplist/ui/widgets/edit/type_widget.dart';
@@ -49,7 +50,10 @@ class _ArrayPlistDictWidgetState extends State<ArrayPlistDictWidget> with Ticker
           children: [
             SizedBox(
               width: 300 - widget.indent * 20 - 20,
-              child: Text(_type() == 'plist' ? 'Root' : 'Item ${widget.path.last}'),
+              child: Text(
+                _type() == 'plist' ? 'Root' : 'Item ${widget.path.last}',
+                style: const TextStyle(fontSize: treeFontSize),
+              ),
             ),
             _addRemoveWidget(),
             const SizedBox(width: 3),
@@ -68,6 +72,7 @@ class _ArrayPlistDictWidgetState extends State<ArrayPlistDictWidget> with Ticker
                 : Container(),
             Text(
               '(${_childElementCount()} items)',
+              style: const TextStyle(fontSize: treeFontSize),
               // style: _expanded ? null : const TextStyle(color: Colors.white60)
             ),
           ],

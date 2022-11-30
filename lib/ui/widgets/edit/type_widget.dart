@@ -1,3 +1,4 @@
+import 'package:anyplist/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,7 +26,7 @@ class _TypeWidgetState extends State<TypeWidget> {
   @override
   Widget build(BuildContext context) {
     return _type() == 'plist'
-        ? const Text('plist')
+        ? const Text('plist', style: TextStyle(fontSize: typeFontSize))
         : DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: _type(),
@@ -34,7 +35,7 @@ class _TypeWidgetState extends State<TypeWidget> {
                   .map<DropdownMenuItem<String>>((String type) {
                 return DropdownMenuItem(
                   value: type,
-                  child: Text(type),
+                  child: Text(type, style: const TextStyle(fontSize: typeFontSize)),
                 );
               }).toList(),
             ),

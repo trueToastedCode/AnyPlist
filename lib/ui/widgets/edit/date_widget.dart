@@ -1,3 +1,4 @@
+import 'package:anyplist/globals.dart';
 import 'package:anyplist/states_management/edit/edit_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class _DateWidgetState extends State<DateWidget> {
         hintText: "date",
         contentPadding: EdgeInsets.only(top: 17, right: 0),
       ),
-      style: const TextStyle(fontSize: 12),
+      style: const TextStyle(fontSize: itemFontSize),
       textAlignVertical: TextAlignVertical.bottom,
       controller: _controller,
     );
