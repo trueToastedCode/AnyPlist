@@ -39,7 +39,7 @@ class _KeySingleWidgetState extends State<KeySingleWidget> {
       child: Row(
         children: [
           SizedBox(
-            width: 300 - widget.indent * 20 + 3.5,
+            width: 300 - widget.indent * 20/* + 3.5*/,
             child: Padding(
               padding: const EdgeInsets.only(right: 2),
               child: StringWidget(
