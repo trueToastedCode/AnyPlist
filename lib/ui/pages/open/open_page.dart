@@ -1,3 +1,6 @@
+import 'dart:html' as html;
+
+import 'package:anyplist/services/adblock_detection/adblock_detection_impl.dart';
 import 'package:anyplist/ui/pages/open/router/open_router_contract.dart';
 import 'package:anyplist/ui/widgets/open/open_widget.dart';
 import 'package:anyplist/ui/widgets/open/version_widget.dart';
@@ -19,6 +22,12 @@ class OpenPage extends StatefulWidget {
 }
 
 class _OpenPageState extends State<OpenPage> {
+
+  @override
+  void initState() {
+    super.initState();
+    _init();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,5 +112,44 @@ class _OpenPageState extends State<OpenPage> {
         );
       },
     );
+  }
+
+  _adBlocker() {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: const Text('Adblocker Detected'),
+          content: SingleChildScrollView(
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: const TextSpan(
+                children: [
+                  TextSpan(text: '🦄 This website is free to use 🦄.', style: TextStyle(color: Colors.green)),
+                  TextSpan(text: ' However hosting it, is not. Therefore ads make this side possible. Please disable you\'re Adblocker.', style: TextStyle(color: Colors.red)),
+                ]
+              ),
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => html.window.location.reload(),
+              child: const Text('💪 I\'ve disabled 💪'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+   _init() async {
+     try {
+       if (!await AdblockDetection().isBocked()) return;
+     } on Exception catch(_) {
+       return;
+     }
+     await Future.delayed(const Duration(seconds: 1));
+     _adBlocker();
   }
 }

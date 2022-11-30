@@ -1,4 +1,5 @@
 import 'dart:io' show Platform;
+import 'dart:js' as js;
 
 import 'package:anyplist/states_management/edit/edit_cubit.dart';
 import 'package:anyplist/states_management/edit/edit_state.dart';
@@ -23,6 +24,12 @@ class EditPage extends StatefulWidget {
 
 class _EditPageState extends State<EditPage> {
   final _treeBuilder = TreeBuilder();
+
+  @override
+  void initState() {
+    super.initState();
+    _init();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -171,5 +178,9 @@ class _EditPageState extends State<EditPage> {
         );
       },
     );
+  }
+
+  _init() {
+    js.context.callMethod('interstitialAd');
   }
 }
