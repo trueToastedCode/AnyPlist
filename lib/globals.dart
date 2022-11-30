@@ -11,4 +11,4 @@ const itemFontSize = 13.0;
 
 const treeFontSize = 13.0;
 
-const typeFontSize = 13.0;
+const typeFontSize = 15.0;
