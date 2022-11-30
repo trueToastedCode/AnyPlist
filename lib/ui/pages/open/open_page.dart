@@ -120,14 +120,20 @@ class _OpenPageState extends State<OpenPage> {
       context: context,
       builder: (BuildContext context) {
         return CupertinoAlertDialog(
-          title: const Text('Adblocker Detected'),
+          title: const Text('AdBlocker Detected'),
           content: SingleChildScrollView(
             child: RichText(
               textAlign: TextAlign.center,
               text: const TextSpan(
                 children: [
-                  TextSpan(text: '🦄 This website is free to use 🦄.', style: TextStyle(color: Colors.green)),
-                  TextSpan(text: ' However hosting it, is not. Therefore ads make this side possible. Please disable you\'re Adblocker.', style: TextStyle(color: Colors.red)),
+                  TextSpan(
+                    text: '🦄 This website is free to use 🦄.',
+                    style: TextStyle(color: Colors.green),
+                  ),
+                  TextSpan(
+                    text: ' However hosting it, is not. Therefore ads make this side possible. Please disable you\'re Adblocker.',
+                    style: TextStyle(color: Colors.red),
+                  ),
                 ]
               ),
             ),

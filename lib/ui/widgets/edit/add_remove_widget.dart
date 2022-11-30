@@ -11,8 +11,9 @@ class AddRemoveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 33 + 1,
+    return Container(
+      margin: const EdgeInsets.only(right: 5),
+      width: 36,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: _children(context),
@@ -23,8 +24,8 @@ class AddRemoveWidget extends StatelessWidget {
   _children(BuildContext context) {
     final widgets = <Widget>[
       SizedBox(
-        width: 15,
-        height: 15,
+        width: 16.5,
+        height: 16.5,
         child: TextButton(
           onPressed: () => _add(context),
           style: ButtonStyle(
@@ -43,8 +44,8 @@ class AddRemoveWidget extends StatelessWidget {
       widgets.addAll([
         const SizedBox(width: 3),
         SizedBox(
-          width: 15,
-          height: 15,
+          width: 16.5,
+          height: 16.5,
           child: TextButton(
             onPressed: () => _remove(context),
             style: ButtonStyle(

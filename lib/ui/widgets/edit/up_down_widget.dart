@@ -11,42 +11,45 @@ class UpDownWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 15,
-          height: 15,
-          child: TextButton(
-            onPressed: () => _reorder(context, true),
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all(const CircleBorder()),
-              backgroundColor: MaterialStateProperty.all(Colors.white24),
-              minimumSize: MaterialStateProperty.all(Size.zero),
-              padding: MaterialStateProperty.all(EdgeInsets.zero),
-            ),
-            child: const Center(
-              child: Icon(Icons.keyboard_arrow_up, size: 14, color: Colors.black54),
-            ),
-          ),
-        ),
-        const SizedBox(width: 3),
-        SizedBox(
-          width: 15,
-          height: 15,
-          child: TextButton(
-            onPressed: () => _reorder(context, false),
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all(const CircleBorder()),
-              backgroundColor: MaterialStateProperty.all(Colors.white24),
-              minimumSize: MaterialStateProperty.all(Size.zero),
-              padding: MaterialStateProperty.all(EdgeInsets.zero),
-            ),
-            child: const Center(
-              child: Icon(Icons.keyboard_arrow_down, size: 14, color: Colors.black54),
+    return Padding(
+      padding: const EdgeInsets.only(right: 5),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 16.5,
+            height: 16.5,
+            child: TextButton(
+              onPressed: () => _reorder(context, true),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(const CircleBorder()),
+                backgroundColor: MaterialStateProperty.all(Colors.white24),
+                minimumSize: MaterialStateProperty.all(Size.zero),
+                padding: MaterialStateProperty.all(EdgeInsets.zero),
+              ),
+              child: const Center(
+                child: Icon(Icons.keyboard_arrow_up, size: 14, color: Colors.black54),
+              ),
             ),
           ),
-        ),
-      ],
+          const SizedBox(width: 3),
+          SizedBox(
+            width: 16.5,
+            height: 16.5,
+            child: TextButton(
+              onPressed: () => _reorder(context, false),
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all(const CircleBorder()),
+                backgroundColor: MaterialStateProperty.all(Colors.white24),
+                minimumSize: MaterialStateProperty.all(Size.zero),
+                padding: MaterialStateProperty.all(EdgeInsets.zero),
+              ),
+              child: const Center(
+                child: Icon(Icons.keyboard_arrow_down, size: 14, color: Colors.black54),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 

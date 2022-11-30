@@ -181,6 +181,6 @@ class _EditPageState extends State<EditPage> {
   }
 
   _init() {
-    js.context.callMethod('interstitialAd');
+    // js.context.callMethod('interstitialAd');
   }
 }
